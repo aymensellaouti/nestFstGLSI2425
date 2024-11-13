@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
+import { UserDto } from './user.dto';
 
 @Controller('first')
 export class FirstController {
@@ -7,11 +8,11 @@ export class FirstController {
    sayHello() {
     return 'Goodbye'
    } 
-   @Post('/makla') 
+   @Post('/user') 
    zidHaja(
-    @Body() data
+    @Body() user: UserDto
    ) {
-    console.log({data})
+    console.log({user})
     return {options: 'Bzayed mayonnaise'}
    }
 }
