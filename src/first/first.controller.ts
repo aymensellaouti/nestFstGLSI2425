@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 
 @Controller('first')
 export class FirstController {
@@ -8,7 +8,10 @@ export class FirstController {
     return 'Goodbye'
    } 
    @Post('/makla') 
-   zidHaja() {
+   zidHaja(
+    @Body() data
+   ) {
+    console.log({data})
     return {options: 'Bzayed mayonnaise'}
    }
 }
