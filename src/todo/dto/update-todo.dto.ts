@@ -1,7 +1,10 @@
+import { IsEnum, IsOptional } from "class-validator";
 import { TodoStatusEnum } from "../todo.model";
+import { PartialType } from "@nestjs/mapped-types";
+import { AddTodoDto } from "./add-todo.dto";
 
-export interface UpdateTodoDto {
-    name: string;
-    description: string;
+export class UpdateTodoDto extends PartialType(AddTodoDto) {
+    @IsOptional()
+    @IsEnum(TodoStatusEnum)
     status: TodoStatusEnum;
 }
