@@ -1,0 +1,136 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "igl42425",
+    "collectionId": "6e708a4c-f6b5-4aeb-ae3c-182311e8022b",
+    "dateExported": "2024-11-13T13:57:22.188Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "0e834393-b3a1-4309-9b70-79e5a076921c",
+            "name": "todo",
+            "containerId": "",
+            "created": "2024-11-13T13:49:37.395Z",
+            "sortNum": 10000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "66b0409c-ceaf-4883-9445-52e052fef806",
+            "colId": "6e708a4c-f6b5-4aeb-ae3c-182311e8022b",
+            "containerId": "",
+            "name": "sayHello",
+            "url": "localhost:3000/first",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-11-13T10:56:31.145Z",
+            "modified": "2024-11-13T10:57:21.669Z",
+            "headers": []
+        },
+        {
+            "_id": "bb33d8eb-3647-4385-8b8b-6a30adf43e26",
+            "colId": "6e708a4c-f6b5-4aeb-ae3c-182311e8022b",
+            "containerId": "",
+            "name": "add haja",
+            "url": "localhost:3000/first/makla",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-11-13T10:57:59.986Z",
+            "modified": "2024-11-13T12:27:22.429Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "message",
+                        "value": "rana jo3na"
+                    },
+                    {
+                        "name": "favouriteFood",
+                        "value": "Koskssi"
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "b87781d2-4ed9-441d-9c7d-16871adafc6d",
+            "colId": "6e708a4c-f6b5-4aeb-ae3c-182311e8022b",
+            "containerId": "0e834393-b3a1-4309-9b70-79e5a076921c",
+            "name": "get todos",
+            "url": "localhost:3000/todo",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-11-13T13:50:59.046Z",
+            "modified": "2024-11-13T13:51:08.930Z",
+            "headers": []
+        },
+        {
+            "_id": "77ceabb0-4ab8-479e-8911-a9312055fbd1",
+            "colId": "6e708a4c-f6b5-4aeb-ae3c-182311e8022b",
+            "containerId": "0e834393-b3a1-4309-9b70-79e5a076921c",
+            "name": "get todo by id ",
+            "url": "localhost:3000/todo/361f1e44-2700-466b-9283-a980c3caf86f",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-11-13T13:51:22.450Z",
+            "modified": "2024-11-13T13:52:50.714Z",
+            "headers": []
+        },
+        {
+            "_id": "b912e8f5-b255-4d5f-8299-18221406750d",
+            "colId": "6e708a4c-f6b5-4aeb-ae3c-182311e8022b",
+            "containerId": "0e834393-b3a1-4309-9b70-79e5a076921c",
+            "name": "add todo",
+            "url": "localhost:3000/todo",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-11-13T13:51:49.307Z",
+            "modified": "2024-11-13T13:52:32.964Z",
+            "headers": [],
+            "body": {
+                "type": "formencoded",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "étudier NestJs"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Reprendre les exercices pour bien les assimiler yeziw bla tkarkir "
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "1ab8c7a7-fe46-42bf-afde-551b045216d1",
+            "colId": "6e708a4c-f6b5-4aeb-ae3c-182311e8022b",
+            "containerId": "0e834393-b3a1-4309-9b70-79e5a076921c",
+            "name": "delete todo ",
+            "url": "localhost:3000/todo/361f1e44-2700-466b-9283-a980c3caf86f",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-11-13T13:53:02.484Z",
+            "modified": "2024-11-13T13:53:32.042Z",
+            "headers": []
+        },
+        {
+            "_id": "3ef436fa-be91-45b2-b1cd-639ffcc91151",
+            "colId": "6e708a4c-f6b5-4aeb-ae3c-182311e8022b",
+            "containerId": "0e834393-b3a1-4309-9b70-79e5a076921c",
+            "name": "update todo",
+            "url": "localhost:3000/todo/f04efb71-ace6-4634-92f2-6cadbfd2c388",
+            "method": "PATCH",
+            "sortNum": 70000,
+            "created": "2024-11-13T13:53:13.302Z",
+            "modified": "2024-11-13T13:56:21.104Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Angular\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "l02KB4ElLiHQc2vNwj3vAWWJjtQsO1TJTWiHnPUbvK7Juodepr0Uyg_2U7A2rH2V1D0aIuM2Fr843PsULvH_8A"
+}
