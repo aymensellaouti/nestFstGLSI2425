@@ -7,6 +7,8 @@ import { TodoController } from './todo/todo.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductModule } from './product/product.module';
 import { Product } from './product/entity/product.entity';
+import { TodoEntity } from './todo/entity/todo.entity';
+import { TodoModule } from './todo/todo.module';
 
 @Module({
   imports: [
@@ -18,13 +20,14 @@ import { Product } from './product/entity/product.entity';
       username: 'root', 
       password: '', 
       database: 'igl42425', 
-      entities: [Product], 
+      autoLoadEntities: true,
       synchronize: true, 
       logging: true
     }),
-    ProductModule
+    ProductModule,
+    TodoModule
   ],
-  controllers: [AppController, SecondController, TodoController],
+  controllers: [AppController, SecondController],
   providers: [AppService],
 })
 export class AppModule { }
