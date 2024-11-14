@@ -1,8 +1,9 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
 import { Product } from './entity/product.entity';
 import { AddProductDto } from './dto/add-product.dto';
 import { ProductService } from './product.service';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { UpdateResult } from 'typeorm';
 
 @Controller('product')
 export class ProductController {
@@ -11,11 +12,16 @@ export class ProductController {
     ) {}
     // Il recoit les requetes 
 
-    // @Get()
-    // getProducts():Product[] {
-    //     // Le service eli ia3ref ijib la liste des produits
-    //     return [];
-    // }
+    @Get()
+    getProducts(): Promise<Product[]> {
+        return this.productService.findAll();
+    }
+    @Get(':id')
+    getProductById(
+        @Param('id') id: string
+    ): Promise<Product> {
+        return this.productService.findOne(id);
+    }
     @Post()
     addProduct(
         @Body() addProductDto: AddProductDto
@@ -29,5 +35,19 @@ export class ProductController {
         @Body() updateProductDto: UpdateProductDto
     ): Promise<Product> {
         return this.productService.updateProduct(id, updateProductDto);
+    }
+    
+    @Delete(':id')
+    deleteProduct(
+        @Param('id') id: string
+    ): Promise<UpdateResult> {
+        return this.productService.softDelete(id);
+    }
+    
+    @Patch('restore/:id')
+    restoreProduct(
+        @Param('id') id: string
+    ): Promise<UpdateResult> {
+        return this.productService.restoreProduct(id);
     }
 }

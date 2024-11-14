@@ -1,7 +1,8 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { TimeStampEntity } from "../../common/db utilitaires/timestamp.entity";
 
 @Entity('product')
-export class Product {
+export class Product extends TimeStampEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
     @Column({

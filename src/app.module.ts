@@ -9,6 +9,7 @@ import { ProductModule } from './product/product.module';
 import { Product } from './product/entity/product.entity';
 import { TodoEntity } from './todo/entity/todo.entity';
 import { TodoModule } from './todo/todo.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -25,7 +26,8 @@ import { TodoModule } from './todo/todo.module';
       logging: true
     }),
     ProductModule,
-    TodoModule
+    TodoModule,
+    CommonModule
   ],
   controllers: [AppController, SecondController],
   providers: [AppService],
