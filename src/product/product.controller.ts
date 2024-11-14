@@ -26,7 +26,7 @@ export class ProductController {
     addProduct(
         @Body() addProductDto: AddProductDto
     ): Promise<Product> {
-        return this.productService.addProduct(addProductDto);
+        return this.productService.create(addProductDto);
     }
     
     @Patch(':id')
@@ -34,7 +34,7 @@ export class ProductController {
         @Param('id') id: string,
         @Body() updateProductDto: UpdateProductDto
     ): Promise<Product> {
-        return this.productService.updateProduct(id, updateProductDto);
+        return this.productService.update(id, updateProductDto);
     }
     
     @Delete(':id')
@@ -48,6 +48,6 @@ export class ProductController {
     restoreProduct(
         @Param('id') id: string
     ): Promise<UpdateResult> {
-        return this.productService.restoreProduct(id);
+        return this.productService.restore(id);
     }
 }

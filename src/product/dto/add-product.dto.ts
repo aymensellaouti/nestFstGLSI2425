@@ -1,5 +1,7 @@
 import { Type } from "class-transformer";
 import { IsNotEmpty, IsNumber, IsOptional, MaxLength } from "class-validator";
+import { Ingredient } from "../../ingredient/entities/ingredient.entity";
+import { Nutriscore } from "../../nutriscore/entities/nutriscore.entity";
 
 export class AddProductDto {
     @IsNotEmpty()
@@ -12,4 +14,9 @@ export class AddProductDto {
     @IsOptional()
     @MaxLength(255)
     description: string;
+    @IsOptional()
+    ingredients: 
+    Ingredient[];
+    @IsOptional()
+    nutriscore: Nutriscore[];
 }

@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, NotFoundException, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, NotFoundException, Param, Patch, Post, UsePipes } from '@nestjs/common';
 import { Todo } from './todo.model';
 import { AddTodoDto } from './dto/add-todo.dto';
 import {v4 as uuidv4} from 'uuid';
@@ -7,6 +7,7 @@ import { UpdateTodoDto } from './dto/update-todo.dto';
     path:'todo',
     version: '2'
 })
+
 export class TodoController {
     todos: Todo[] = [];
 
