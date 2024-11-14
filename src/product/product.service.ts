@@ -1,8 +1,9 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { Product } from './entity/product.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AddProductDto } from './dto/add-product.dto';
+import { UpdateProductDto } from './dto/update-product.dto';
 
 @Injectable()
 export class ProductService {
@@ -26,5 +27,11 @@ export class ProductService {
 
     addProduct(addProductDto: AddProductDto): Promise<Product> {
         return this.productRepository.save(addProductDto);
+    }
+    
+    async updateProduct(id: string, updateProductDto: UpdateProductDto): Promise<Product> {
+        const newProduct = await this.productRepository.preload({id, ...updateProductDto })
+        if(!newProduct) throw new NotFoundException(`le product d'id ${id} n'existe pas`);
+        return this.productRepository.save(newProduct);
     }
 }

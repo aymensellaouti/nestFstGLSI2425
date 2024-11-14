@@ -5,15 +5,14 @@ import {v4 as uuidv4} from 'uuid';
 import { UpdateTodoDto } from './dto/update-todo.dto';
 @Controller({
     path:'todo',
-    version: '2'
+    version: '1'
 })
-export class TodoController {
+export class TodoDBController {
     todos: Todo[] = [];
 
     @Get()
     getAllFake(): Todo[] {
-        console.log('V2');
-        
+        console.log('V1');
         return this.todos;
     }
 
