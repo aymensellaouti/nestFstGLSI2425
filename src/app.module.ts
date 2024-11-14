@@ -5,6 +5,8 @@ import { FirstModule } from './first/first.module';
 import { SecondController } from './second/second.controller';
 import { TodoController } from './todo/todo.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ProductModule } from './product/product.module';
+import { Product } from './product/entity/product.entity';
 
 @Module({
   imports: [
@@ -16,10 +18,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root', 
       password: '', 
       database: 'igl42425', 
-      entities: [], 
+      entities: [Product], 
       synchronize: true, 
       logging: true
-    })
+    }),
+    ProductModule
   ],
   controllers: [AppController, SecondController, TodoController],
   providers: [AppService],
