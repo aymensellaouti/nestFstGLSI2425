@@ -15,8 +15,14 @@ export class TodoDBController {
     ) {}
     @Get()
     getAll(): Promise<TodoEntity[]> {
+       
        return this.todoService.findAll()
     }
+    // @Get('interval')
+    // getAllInInterval(): Promise<TodoEntity[]> {
+    // //    date1 = new Date() 
+    // //    return this.todoService.getTodosInInterval()
+    // }
 
     @Get(':id')
     getOne(@Param('id') id: string): Promise<TodoEntity> {
